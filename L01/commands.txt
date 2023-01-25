@@ -1,0 +1,10 @@
+mv : move things in the world.　ie) mv OBJECT NEWLOCATION 
+add : add new rooms to home.
+cd ~ : go back home
+rm NAME : make an item or person disappear from this plane.
+mkdir NAME : create a new place that never existed there before.
+Sudo : convey complete mastery over the elements
+grep : search for a phrase in a book. Ie)grep PHRASE ITEM 
+touch : make things ie) touch ITEM
+cp : copy an item from one room to the other ie) cp [ITEM_TO_COPY] ../[NEW_ITEM_NAME]
+
