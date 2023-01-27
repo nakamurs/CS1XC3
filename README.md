@@ -1,2 +1,2 @@
-# CS1XC3
-My first lab repository
+Name : Sota Nakamura
+ID : nakamurs
