@@ -1,10 +1,26 @@
+ls : list the contents of your current directory
+
+cd : move to a change directories (use cd .. to move backwards)
+
+less : print out the contents of a file
+
+pwd : show the file path of your parent working directory (i.e the directory you’re currently in
+
 mv : move things in the world.　ie) mv OBJECT NEWLOCATION 
+
 add : add new rooms to home.
+
 cd ~ : go back home
-rm NAME : make an item or person disappear from this plane.
+
+rm : make an item or person disappear from this plane. Ie)rm name
+
 mkdir NAME : create a new place that never existed there before.
+
 Sudo : convey complete mastery over the elements
+
 grep : search for a phrase in a book. Ie)grep PHRASE ITEM 
+
 touch : make things ie) touch ITEM
+
 cp : copy an item from one room to the other ie) cp [ITEM_TO_COPY] ../[NEW_ITEM_NAME]
 
