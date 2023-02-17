@@ -3,24 +3,34 @@
 # Use First Argument As Working Directory
 WDIR="$1"
 cd "$WDIR"
+FILE="file1.txt"
 
 if [ "$2" -eq 1 ] ; then
-    if [-f "file1.txt" ] ; then
+    if [-f $FILE ] ; then
 	:
     else
-	touch "file1.txt"
+	touch $FILE
 	echo "$USER" > file1.txt
     fi
 elif [ "$2" -eq 2 ] ; then
-    if [-e "file1.txt"] ; then
+    if [-e $FILE] ; then
 	mkdir backup
-	cp "file1.txt" /backup
-    fi
-elif [ "$2" -eq 3 ] ; then
-    if [-e "backup/file1.txt"] ; then
-	cp "backup/file1.txt" /L04
-	rm backup/file1.txt
+	cp $FILE /backup
     fi
 fi
+
+if [ "$2" -eq 3 ] ; then
+    if [-e "backup/"$FILE] ; then
+	cp "backup/"$FILE /L04
+	rm backup/$FILE
+    fi
+fi
+
+if ["$#" -ge 3] ; then
+    FILE="$3"
+fi
+
+
+    
 
 echo "Finished"
