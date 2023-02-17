@@ -10,9 +10,12 @@ if [ "$2" -eq 1 ] ; then
     else
 	touch "file1.txt"
 	echo "$USER" > file1.txt
-	
+    fi
 elif [ "$2" -eq 2 ] ; then
-    echo "TODO Objective 2"
+    if [-e "file1.txt"] ; then
+	mkdir backup
+	cp "file1.txt" /backup
+    fi
 fi
 
 echo "Finished"
