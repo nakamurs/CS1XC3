@@ -16,6 +16,11 @@ elif [ "$2" -eq 2 ] ; then
 	mkdir backup
 	cp "file1.txt" /backup
     fi
+elif [ "$2" -eq 3 ] ; then
+    if [-e "backup/file1.txt"] ; then
+	cp "backup/file1.txt" /L04
+	rm backup/file1.txt
+    fi
 fi
 
 echo "Finished"
