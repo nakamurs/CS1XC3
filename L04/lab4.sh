@@ -5,7 +5,12 @@ WDIR="$1"
 cd "$WDIR"
 
 if [ "$2" -eq 1 ] ; then
-    echo "TODO Objective 1"
+    if [-f "file1.txt" ] ; then
+	:
+    else
+	touch "file1.txt"
+	echo "$USER" > file1.txt
+	
 elif [ "$2" -eq 2 ] ; then
     echo "TODO Objective 2"
 fi
