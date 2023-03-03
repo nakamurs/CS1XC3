@@ -1,15 +1,15 @@
 Search Value, Linear Search, Binary Search, Fibonacci Search, Notes
-1, 0m0.004s, 0m0.003s, 0m0.004s,
-4, 0m0.003s, 0m0.004s, 0m0.003s,
-22, 0m0.004s, 0m0.003s, 0m0.004s,
-37, 0m0.004s, 0m0.004s, 0m0.004s,
-22906, 0m0.004s, 0m0.003s, 0m0.004s,
-53757, 0m0.003s, 0m0.004s, 0m0.004s,
-112591, 0m0.004s, 0m0.003s, 0m0.004s,
-361940, 0m0.003s, 0m0.004s, 0m0.004s,
-475713, 0m0.004s, 0m0.005s, 0m0.004s,
-893766, 0m0.004s, 0m0.003s, 0m0.004s,
-996637, 0m0.004s, 0m0.004s, 0m0.003s,
-996639, 0m0.004s, 0m0.004s, 0m0.003s,
-996652, 0m0.004s, 0m0.004s, 0m0.004s,
--996652, 0m0.003s, 0m0.003s, 0m0.004s,
+1, 0m0.004s, 0m0.003s, 0m0.004s, fastest: binary search. why: 1 doesn't exist in the set.
+4, 0m0.003s, 0m0.004s, 0m0.003s, fastest: linear and fibonacci search. why: 4 is the first element. And, fibonacci is faster than binary when searching the element that is close to the edges.
+22, 0m0.004s, 0m0.003s, 0m0.004s, fastest: binary search. why: 22 was presumably one of the middle elements in binary search hence faster than the other two.
+37, 0m0.004s, 0m0.004s, 0m0.004s, fastest: all three. why: 37 is the third element so the linear search was as fast as the other two. 
+22906, 0m0.004s, 0m0.003s, 0m0.004s, fastest: binary search. why: this was presumably one of the middle elements in binary search hence faster than the other two.
+53757, 0m0.003s, 0m0.004s, 0m0.004s, fastest: linear search. why: its index is relatively small.
+112591, 0m0.004s, 0m0.003s, 0m0.004s, fastest: binary search. why: this was presumably one of the middle elements in binary search hence faster than the other two.
+361940, 0m0.003s, 0m0.004s, 0m0.004s, fastest: linear search.  why: its index is relatively small.
+475713, 0m0.004s, 0m0.005s, 0m0.004s, fastest: linear & Fibonacci Search. why: its index is relatively small and Fibonacci can be faster than binary due to its use of golden raito in some cases, and this is one of them
+893766, 0m0.004s, 0m0.003s, 0m0.004s, fastest: binary search.  why: its index is relatively large.
+996637, 0m0.004s, 0m0.004s, 0m0.003s, fastest: fibonacci search. why: fibonacci is faster than binary when searching the element that is close to the edge.
+996639, 0m0.004s, 0m0.004s, 0m0.003s, fastest: fibonacci why: fibonacci	is faster than binary when searching the element that is close to the edge.
+996652, 0m0.004s, 0m0.004s, 0m0.004s, fastest: fibonacci why: fibonacci is faster than binary when searching the element that is close to the edge. 
+-996652, 0m0.003s, 0m0.003s, 0m0.004s, fastest: binary search. why: this doesn't exist in the set.
