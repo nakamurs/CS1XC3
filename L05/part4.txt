@@ -1,0 +1,16 @@
+(a) How are the iterative and recursive algorithms similar and different for the same test cases?
+Which has more repetition?
+
+      The iterative algorithm has more repetition than the recursive one. The factor_itr function repeatedly checks if the current factorization is already in the all array with nested loops, while the factor_rec function uses recursion to generate all possible factorizations without checking for duplicates.
+
+(b) What is the most executed line in the iterative and recursive algorithms? Are they the same?
+
+      The most executed line in the iterative algorithm is 'while (N % i != 0) { i += 1; }'. This loop is executed repeatedly unless i is a prime factor of N. In the recursive algorithm, the most executed line is likely to be the recursive call to the factor_rec function: 'factor_rec(d / i, factors, pos + 1);' This line is called repeatedly until d is fully factored into prime factors. They are not the same.
+
+(c) Are there any parts of the code which are not exercised?
+
+    This code looks like a complete program.    
+
+(d) If we were to try to optimize either function, where would be a good place to start?
+
+    We can start trying to reduce the time complexity of 'primeFactors_itr'. For example, we can perform trial division only on odd numbers greater than 2 instead of incrementing integers by 1.
