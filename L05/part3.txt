@@ -1,0 +1,11 @@
+• Why are all the reported times zero?
+
+  Because this function is runs very fast to the point where the time 's extremely close to 0.
+
+• Why is factors_itr only called once every time the program is run?
+
+  factors_itr is called once for each row of the all array in the allFactors_itr function. For each new row that is added to all, factors_itr is called to compute and find theprime factors. Therefore, factors_itr is called multiple times, but only once per new product that is added to all.
+      
+• Is there an obvious mathematical relationship between the input number and the number of recursive calls? What about the number of prime factors each number produces?
+
+  The bigger the input number is, the more recursive calls are made. Also, the bigger the input number is, the more prime factors it has.
