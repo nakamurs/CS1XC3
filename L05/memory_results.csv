@@ -1,15 +1,15 @@
 Search Value, Linear Search, Binary Search, Fibonacci Search, Notes
-1, 2224, 2256, 2244,
-4, 2212, 2204, 2196,
-22, 2204, 2228, 2252,
-37, 2124, 2220, 2220,
-22906, 2212, 2236, 2228,
-53757, 2248, 2304, 2224,
-112591, 2220, 2228, 2256,
-361940, 2212, 2240, 2124,
-475713, 2228, 2220, 2252,
-893766, 2304, 2196, 2224,
-996637, 2200, 2220, 2236,
-996639, 2228, 2228, 2220,
-996652, 2220, 2200, 2224,
--996652, 2120, 2304, 2248,
+1, 2224, 2256, 2244, memory use of linear search is proportionate to the number of comparisons it conducts. In this case every element is compared hence large high memory use. binary search hass lower runtime but high memory use. fibonacci search use most memory because the use of golden rato leads to more memory use than binary search.
+4, 2212, 2204, 2196, fibonacci search use most memory because the use of golden rato leads to more memory use than binary search.
+22, 2204, 2228, 2252, fibonacci search use most memory because the use of golden rato leads to more memory use than binary search.
+37, 2124, 2220, 2220, binary and fibonacci search has high memory use in general.
+22906, 2212, 2236, 2228, binary search use the most memory even though(or because) it was the fastest.
+53757, 2248, 2304, 2224, linear search use the most memory because the number of comparisons is decent.
+112591, 2220, 2228, 2256, fibonacci search use most memory because the use of golden rato leads to more memory use than binary search.
+361940, 2212, 2240, 2124, binary search use the most memor because it has to memorize the value of the lower and upper bound.
+475713, 2228, 2220, 2252, fibonacci search use most memory because the use of golden rato leads to more memory use than binary search.
+893766, 2304, 2196, 2224, binary search use the most memor because it has to memorize the value	of the lower and upper bound.
+996637, 2200, 2220, 2236, fibonacci search use most memory because the use of golden rato leads to more memory use than binary search.
+996639, 2228, 2228, 2220, binary and linear search use the most memor because it has to memorize the value of the lower and upper bound and it's close to the end.
+996652, 2220, 2200, 2224, fibonacci search use most memory because the use of golden rato leads to more memory use than binary search.
+-996652, 2120, 2304, 2248, fibonacci search use most memory because the use of golden rato leads to more memory use than binary search.
