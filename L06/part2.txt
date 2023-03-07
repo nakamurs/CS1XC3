@@ -1,0 +1,124 @@
+# /etc/profile
+
+# System wide environment and startup programs, for login setup
+# Functions and aliases go in /etc/bashrc
+
+# It's NOT a good idea to change this file unless you know what you
+# are doing. It's much better to create a custom.sh shell script in
+# /etc/profile.d/ to make custom changes to your environment, as this
+# will prevent the need for merging in future updates.
+
+pathmunge () {
+    case ":${PATH}:" in
+        *:"$1":*)
+            ;;
+        *)
+            if [ "$2" = "after" ] ; then
+                PATH=$PATH:$1
+            else
+                PATH=$1:$PATH
+            fi
+    esac
+}
+
+
+if [ -x /usr/bin/id ]; then
+    if [ -z "$EUID" ]; then
+        # ksh workaround
+        EUID=`/usr/bin/id -u`
+        UID=`/usr/bin/id -ru`
+    fi
+    USER="`/usr/bin/id -un`"
+    LOGNAME=$USER
+    MAIL="/var/spool/mail/$USER"
+fi
+
+# Path manipulation
+if [ "$EUID" = "0" ]; then
+    pathmunge /usr/sbin
+    pathmunge /usr/local/sbin
+else
+    pathmunge /usr/local/sbin after
+    pathmunge /usr/sbin after
+fi
+
+HOSTNAME=`/usr/bin/hostname 2>/dev/null`
+HISTSIZE=1000
+if [ "$HISTCONTROL" = "ignorespace" ] ; then
+    export HISTCONTROL=ignoreboth
+else
+    export HISTCONTROL=ignoredups
+fi
+
+export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
+
+# By default, we want umask to get set. This sets it for login shell
+# Current threshold for system reserved uid/gids is 200
+# You could check uidgid reservation validity in
+# /usr/share/doc/setup-*/uidgid file
+if [ $UID -gt 199 ] && [ "`/usr/bin/id -gn`" = "`/usr/bin/id -un`" ]; then
+    umask 002
+else
+    umask 022
+fi
+
+for i in /etc/profile.d/*.sh /etc/profile.d/sh.local ; do
+    if [ -r "$i" ]; then
+        if [ "${-#*i}" != "$-" ]; then 
+            . "$i"
+        else
+            . "$i" >/dev/null
+        fi
+    fi
+done
+
+unset i
+unset -f pathmunge
+
+if [ -n "${BASH_VERSION-}" ] ; then
+        if [ -f /etc/bashrc ] ; then
+                # Bash login shells run only /etc/profile
+                # Bash non-login shells run only /etc/bashrc
+                # Check for double sourcing is done in /etc/bashrc.
+                . /etc/bashrc
+       fi
+fi
+------
+ 15:06:26 up 80 days,  6:14, 36 users,  load average: 1.10, 0.68, 0.64
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+nakamurs pts/43   172.17.68.33     14:29    2.00s  0.22s  0.06s w
+ofeknale pts/44   172.18.69.85     15:00    6:12   0.04s  0.04s -bash
+balasim  pts/47   172.18.69.222    15:06   11.00s  0.04s  0.04s -bash
+miletid  pts/13   172.17.241.128   13:33    1:27m  0.06s  0.06s -bash
+sajjaa7  pts/4    172.17.67.226    13:10    1:33m  0.15s  0.15s -bash
+quans6   pts/6    172.18.63.1      15:06   10.00s  0.06s  0.06s -bash
+liu1690  pts/7    172.18.69.208    13:31   29:06   0.39s  0.39s -bash
+samplj   pts/71   172.18.64.104    13:17   54:02   0.17s  0.17s -bash
+guptae6  pts/88   172.18.129.206   14:44   21:54   0.06s  0.06s -bash
+singj93  pts/89   172.17.62.204    14:44    1:37   0.26s  0.26s -bash
+zhoua39  pts/92   172.17.145.17    12:52    2:11m  0.06s  0.06s -bash
+kaura69  pts/99   172.17.141.199   12:31    1:46m  0.14s  0.14s -bash
+chalilr  pts/101  172.18.199.125   15:06    4.00s  0.04s  0.04s -bash
+zajkeskn pts/128  172.18.119.170   14:37    2.00s  0.31s  0.31s -bash
+benmessn pts/160  172.17.100.122   12:58   36:41   0.54s  0.54s -bash
+ansars23 pts/233  172.18.203.245   14:10   54:47   0.05s  0.05s -bash
+arorag12 pts/220  172.18.52.105    13:21    1:30   0.67s  0.67s -bash
+balasim  pts/281  172.17.241.119   13:28    1:36m  0.09s  0.04s nano .bash_profile
+bhattv11 pts/353  172.18.29.18     14:12   53:06   2.21s  2.21s /home/bhattv11/.local/bin/zsh -l
+jeonj10  pts/386  172.17.68.104    13:41    2.00s  1.07s  1.07s -bash
+zhoua39  pts/388  172.17.65.81     13:44    1:17m  0.13s  0.13s -bash
+gaffena  pts/401  172.18.6.194     14:07   20:42   0.23s  0.23s -bash
+ukaegbuc pts/381  172.17.1.48      13:46    2:38   0.30s  0.30s -bash
+ebrahp2  pts/387  172.17.69.84     13:43    1:22m  0.05s  0.05s -bash
+hashmik  pts/389  172.17.59.137    13:48    1:17m  0.05s  0.05s -bash
+racharls pts/403  172.17.57.152    15:04   18.00s  0.08s  0.08s -bash
+shahr73  pts/404  172.18.114.231   14:00   10.00s  0.16s  0.16s -bash
+maliks54 pts/426  172.18.202.193   15:00    2.00s  0.14s  0.02s /usr/bin/vi /home/maliks54/CS1XC3/.git/MERGE_MSG
+ukaegbuc pts/434  172.17.1.48      14:30   31:30   0.07s  0.07s -bash
+miletid  pts/379  172.18.66.90     15:00    2.00s  0.13s  0.04s nano .bash_profile
+kaura69  pts/432  172.17.69.133    14:44   21:14   0.06s  0.06s -bash
+robins46 pts/443  172.17.56.134    14:47   11:37   0.28s  0.28s -bash
+rothk4   pts/444  172.17.61.26     14:48    7:51   0.08s  0.08s -bash
+clears2  pts/455  172.18.21.71     14:51   14:42   0.04s  0.04s -bash
+zhoue5   pts/457  172.18.203.1     14:51    2.00s  0.19s  0.19s -bash
+modyd1   pts/466  172.17.58.69     15:03    2:42   0.04s  0.04s -bash

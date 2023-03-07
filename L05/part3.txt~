@@ -1,0 +1,5 @@
+• Why are all the reported times zero?
+  A.Because this function is considered "small." So, it runs very fast to the point where it's extremely close to 0.
+• Why is factors_itr only called once every time the program is run?
+• Is there an obvious mathematical relationship between the input number and the number of
+recursive calls? What about the number of prime factors each number produces?
