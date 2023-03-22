@@ -1,6 +1,6 @@
 [submodule "L07/1XC3_L07"]
 	path = L07/1XC3_L07
 	url = https://github.com/nakamurs/1XC3_L07.git
-[submodule "course-name"]
-	path = course-name
+[submodule "L08/course-name"]
+	path = L08/course-name
 	url = https://github.com/nakamurs/course-name.git
