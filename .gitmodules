@@ -1,3 +1,6 @@
 [submodule "L08/course-name"]
 	path = L08/course-name
 	url = https://github.com/nakamurs/course-name.git
+[submodule "L08/course-name2"]
+	path = L08/course-name2
+	url = https://github.com/nakamurs/course-name2.git
