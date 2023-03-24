@@ -4,3 +4,9 @@
 [submodule "L08/course-name2"]
 	path = L08/course-name2
 	url = https://github.com/nakamurs/course-name2.git
+[submodule "L07/1XC3_L07"]
+	path = L07/1XC3_L07
+	url = https://github.com/nakamurs/1XC3_L07.git
+[submodule "L08/CS1XC3_L08_P3"]
+	path = L08/CS1XC3_L08_P3
+	url = https://github.com/nakamurs/CS1XC3_L08_P3.git
