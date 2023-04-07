@@ -1,0 +1,24 @@
+abc
+123
+...\.
+[cmf]an
+[^b]og
+[A-C][n-p][a-c]
+waz{2,5}up
+a*b*c+
+\d+ files? found\?
+\d.\s+abc
+\ssuccessful$
+^(file_.+)\.pdf$
+([A-Z][a-z]{2} (\d{4}))
+(\d{4})?x(\d{3,4})?
+I love (cats|dogs)
+\S*\s\w*\s\w*\s\w*\s\w*\s\w*\s\w*\s\S*\s\S*\S*\s?\S*
+\S+\d$
+\S?\s?(\d{3})\W?\d{3}\W?\d{4}
+([\w,.]+)\S*@\S+.com$
+<.+>.+</(\w+)>
+(\S+)\.(jpg|png|gif)$
+^\s+(.*)$
+/.+1553.:\s+at widget.List.(\w*).([\w\.]*):(\d+).
+(\w+)://([^:/]+):?(\d*)/.*
