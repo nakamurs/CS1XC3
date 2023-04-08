@@ -1,0 +1,15 @@
+find . -name "*.tex"
+find . -name "*.tex" ! -name "template.tex"
+find . -name "*.tex" -exec wc -l {} \;
+find . -name "*.tex" -o -name "*.pdf" -o -name "*.toc"
+find ./exercises/Part2/SLIDES/Topic\ {7..12}*/ -type f -name "*.pdf"
+find . -name "*~" -delete
+find . -name "#*#" -delete
+find . -regextype posix-extended \( -regex ".*/.{6}\.(png|jpg|bmp)" -o -regex ".*/.{5}\.webp" \) -type f > ./exercises/Part2/goodFiles.txt
+find -type f -name "*.log" ! -name "allTheLogs.log" -exec cat {} >> ./allTheLogs.log \;
+find . -name "*C*.aux" -exec awk 'NR==10' {} \;
+find . -name "*.sh" | xargs chmod +x
+find . -type f -name "* and *" -exec head -n 10 {} \; >> ./exercises/Part2/allheads.txt
+mkdir -p image_backup && find . -regextype posix-extended -regex ".*/.{10}\.(png|jpg|jpeg|webp)" -type f -exec cp {} image_backup/ \;
+find . -name "filenames.txt" | xargs cat
+find . -type f allTheGlobs.txt -print0 | xargs -0 -I {} echo {}
